@@ -25,8 +25,9 @@ public class menu_utama {
     public static void pilketua(){
         do{
             System.out.printf( Design[1] + "\n\t\tKandidat untuk %s\n1.%s\n2.%s\nNomor yang anda pilih ",jabatan[0], kandidat[0][0],kandidat[0][1]);
+            admin admin = new admin();
             Scanner pilih = new Scanner(System.in);
-            vote[0] = pilih.nextInt();;
+            vote[0] = admin.ceknomor(pilih, "Nomor yang anda pilih ");
             switch(vote[0]){
                 case 1: posisi[0] = kandidat[0][0];
                     count[0]++;
@@ -45,8 +46,9 @@ public class menu_utama {
     public static void pilwaket(){
         do{
             System.out.printf(Design[1] + "\n\t\tKandidat untuk %s\n1.%s\n2.%s\nNomor yang anda pilih ", jabatan[1],kandidat[1][0],kandidat[1][1]);
+            admin admin = new admin();
             Scanner pilih = new Scanner(System.in);
-            vote[1] = pilih.nextInt();
+            vote[1] = admin.ceknomor(pilih, "Nomor yang anda pilih ")
             switch(vote[1]){
                 case 1: posisi[1] = kandidat[1][0];
                     count[2]++;
@@ -62,6 +64,21 @@ public class menu_utama {
         System.out.printf("Anda memilih %s untuk jabatan sebagai %s\n",posisi[1],jabatan[1]);
     }
 
+    static int ceknomormenu(Scanner nomor) {
+        int scan;
+        Scanner cek = new Scanner(System.in);
+        while (!cek.hasNextInt()) {
+            System.out.println(Design[2] + "\nInput yang anda masukkan tidak valid, coba lagi");
+            System.out.println("Silahkan pilih peran Anda");
+            System.out.println("1. Pemilih");
+            System.out.println("2. Admin");
+            System.out.print("Pilihan menu: ");
+            cek.next();
+        }
+        scan = cek.nextInt();
+        return scan;
+    }
+    
     public static int menu(){
         int pilihan;
         System.out.println(Design[1] + "\n\t\tSelamat Datang di Pemilihan Pengurus\n" + Design[1]);
@@ -70,7 +87,7 @@ public class menu_utama {
         System.out.println("2. Admin");
         System.out.print("Pilihan menu: ");
         Scanner scan = new Scanner(System.in);
-        pilihan = scan.nextInt();
+        pilihan = ceknomormenu(scan);
         return pilihan;
     }
 
