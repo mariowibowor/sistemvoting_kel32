@@ -38,6 +38,7 @@ public class admin {
 
     static boolean login(int PIN, int keypin, String username, String keyusername) {
         System.out.println(Design[2] + "\nSelamat Datang Administrator");
+        int percobaan = 2;
         while (true) {
             System.out.println(Design[2] + "\nSilahkan masukkan username dan PIN");
             System.out.print("Username: ");
@@ -48,7 +49,16 @@ public class admin {
             PIN = ceknomor(pin, "PIN: ");
 
             if (PIN == keypin && username.equals(keyusername)) {
+                percobaan = 2;
                 return true;
+                } else {
+                if (percobaan == 0) {
+                    System.out.println(Design[2] + "\nKesempatan anda habis, program akan berhenti...\n" + Design[2]);
+                    System.exit(0);
+                    percobaan = 3;
+                }
+                System.out.println(Design[2] + "\nUsername/PIN salah, coba lagi, kesempatan anda " + percobaan + " kali lagi");
+                percobaan--;
             }
         }
     }
