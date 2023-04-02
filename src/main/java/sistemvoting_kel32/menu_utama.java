@@ -48,7 +48,7 @@ public class menu_utama {
             System.out.printf(Design[1] + "\n\t\tKandidat untuk %s\n1.%s\n2.%s\nNomor yang anda pilih ", jabatan[1],kandidat[1][0],kandidat[1][1]);
             admin admin = new admin();
             Scanner pilih = new Scanner(System.in);
-            vote[1] = admin.ceknomor(pilih, "Nomor yang anda pilih ")
+            vote[1] = admin.ceknomor(pilih, "Nomor yang anda pilih ");
             switch(vote[1]){
                 case 1: posisi[1] = kandidat[1][0];
                     count[2]++;
