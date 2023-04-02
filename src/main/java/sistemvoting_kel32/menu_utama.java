@@ -7,6 +7,68 @@ public class menu_utama {
             "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
             "*************************************************************************",
             "-------------------------------------------------------------------------"};
+       public static void mainadmin() {
+        String keyusername = "admin";
+        int keyPIN = 123;
+        String username = "";
+        int PIN = 0;
+        int pilihan;
+        int pilihan2 = 1;
+        boolean ceklogin = login(PIN, keyPIN, username, keyusername);
+
+        while (true) {
+            if (ceklogin && pilihan2 == 1) {
+                System.out.println(Design[2] + "\nApa yang akan Anda lakukan");
+                System.out.println("1. Ubah username");
+                System.out.println("2. Ubah PIN");
+                public static void mainadmin() {
+                        Scanner newusrnm = new Scanner(System.in);
+                        keyusername = newusrnm.nextLine();
+                        System.out.println("Username diubah menjadi " + keyusername);
+                        pilihan2 = pilakhir();
+                        break;
+                    case 2:
+                        keyPIN = newpin();
+                        System.out.println("PIN diubah menjadi " + keyPIN);
+                        pilihan2 = pilakhir();
+                        break;
+                    case 3:
+                        cekhasil();
+                        pilihan2 = pilakhir();
+                        break;
+                    case 4:
+                        System.out.println(Design[2] + "\nAnda akan dialihkan ke menu utama\n" + Design[2]);
+                    public static void mainadmin() {
+                        System.out.println("Pilihan Anda tidak valid, coba lagi");
+                        break;
+                }
+            } else if (pilihan2 == 2) {
+                System.exit(0);
+            } else {
+                System.out.println("Input yang anda masukkan salah, coba lagi");
+                pilihan2 = pilakhir();
+            }
+        }
+    }
+
+    static int pilakhir() {
+        int akhir;
+        System.out.println(Design[2] + "\nApakah Anda Ingin Melanjutkan Aktivitas Sebagai Admin");
+        System.out.println("1. Ya");
+        System.out.println("2. Tidak (Keluar Program)");
+        System.out.print("Input: ");
+        Scanner pilakhir = new Scanner(System.in);
+        while (!pilakhir.hasNextInt()) {
+            System.out.println(Design[2] + "\nInput yang anda masukkan tidak valid, coba lagi");
+            System.out.println(Design[2] + "\nApakah Anda Ingin Melanjutkan Aktivitas Sebagai Admin");
+            System.out.println("1. Ya");
+            System.out.println("2. Tidak (Keluar dari Program)");
+            System.out.print("Input: ");
+            pilakhir.next();
+        }
+        akhir = pilakhir.nextInt();
+        return akhir;
+    }
     static int[] count = new int[6];
     static int[] vote = new int[3];
     static String[] jabatan = {"Ketua", "Wakil Ketua"};
