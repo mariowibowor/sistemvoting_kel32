@@ -89,6 +89,7 @@ public class menu_utama {
         }
     }
 
+    
     public static void hasil(){
         System.out.printf(Design[2]+"\nHasil Voting untuk %s \n%s = " + count[0] +"\n%s = "
                 + count[1] + "\n"+Design[2] ,jabatan[0],kandidat[0][0],kandidat[0][1]);
