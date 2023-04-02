@@ -74,7 +74,7 @@ public class menu_utama {
         return pilihan;
     }
 
-    public static void main(String[] args) {
+    public static void main_utama() {
         while (true) {
             int pilihan = menu();
             if (pilihan == 1) {
@@ -87,6 +87,10 @@ public class menu_utama {
                 System.out.println(Design[0] + "\n\tInput yang anda masukkan salah\n" + Design[0]);
             }
         }
+    }
+    
+    public static void main(String[] args) {
+        main_utama();
     }
 
     public static void hasil(){
