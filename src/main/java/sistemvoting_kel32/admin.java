@@ -23,7 +23,8 @@ public class admin {
                 System.out.println("1. Ubah username");
                 System.out.println("2. Ubah PIN");
                 System.out.println("3. Cek Hasil");
-                System.out.println("4. Keluar Program");
+                System.out.println("4. Keluar sebagai Admin");
+                System.out.println("5. Keluar Program");
                 System.out.print("Input: ");
                 Scanner pil = new Scanner(System.in);
                 pilihan = ceknomor(pil, "Input: ");
@@ -42,6 +43,12 @@ public class admin {
                         cekhasil();
                         break;
                     case 4:
+                        System.out.println(Design[2] + "\nAnda akan dialihkan ke menu utama\n" + Design[2]);
+                        menu_utama utama = new menu_utama();
+                        utama.main_utama();
+                        ceklogin = false;
+                        break;
+                    case 5:
                         System.exit(0);
                         break;
                     default:
@@ -99,9 +106,10 @@ public class admin {
                 return true;
                 } else {
                 if (percobaan == 0) {
-                    System.out.println(Design[2] + "\nKesempatan anda habis, program akan berhenti...\n" + Design[2]);
-                    System.exit(0);
-                    percobaan = 3;
+                    System.out.println(Design[2] + "\nKesempatan anda habis, kembali ke menu utama...\n" + Design[2]);
+                    menu_utama utama = new menu_utama();
+                    utama.main_utama();
+                    percobaan = 2;
                 }
                 System.out.println(Design[2] + "\nUsername/PIN salah, coba lagi, kesempatan anda " + percobaan + " kali lagi");
                 percobaan--;
