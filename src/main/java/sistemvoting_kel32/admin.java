@@ -16,7 +16,53 @@ public class admin {
         int pilihan;
         int pilihan2 = 1;
         boolean ceklogin = login(PIN, keyPIN, username, keyusername);
-        cekhasil();
+        
+        while (true) {
+            if (ceklogin) {
+                System.out.println(Design[2] + "\nApa yang akan Anda lakukan");
+                System.out.println("1. Ubah username");
+                System.out.println("2. Ubah PIN");
+                System.out.println("3. Cek Hasil");
+                System.out.println("4. Keluar Program");
+                System.out.print("Input: ");
+                Scanner pil = new Scanner(System.in);
+                pilihan = ceknomor(pil, "Input: ");
+                switch (pilihan) {
+                    case 1:
+                        System.out.print(Design[1] + "\nMasukkan username baru: ");
+                        Scanner newusrnm = new Scanner(System.in);
+                        keyusername = newusrnm.nextLine();
+                        System.out.println("Username diubah menjadi " + keyusername);
+                        break;
+                    case 2:
+                        keyPIN = newpin();
+                        System.out.println("PIN diubah menjadi " + keyPIN);
+                        break;
+                    case 3:
+                        cekhasil();
+                        break;
+                    case 4:
+                        System.exit(0);
+                        break;
+                    default:
+                        System.out.println("Pilihan Anda tidak valid, coba lagi");
+                        break;
+                }
+            }
+        }
+    }
+
+    static int newpin() {
+        int newpin;
+        System.out.print("Masukkan PIN baru: ");
+        Scanner newp = new Scanner(System.in);
+        while (!newp.hasNextInt()) {
+            System.out.println("Input yang anda masukkan tidak valid, coba lagi");
+            System.out.print("PIN baru: ");
+            newp.next();
+        }
+        newpin = newp.nextInt();
+        return newpin;
     }
 
     static void cekhasil() {
