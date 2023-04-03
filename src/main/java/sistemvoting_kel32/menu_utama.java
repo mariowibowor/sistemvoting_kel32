@@ -115,16 +115,20 @@ public class menu_utama {
                 + count[1] + "\n"+Design[2] ,jabatan[0],kandidat[0][0],kandidat[0][1]);
         if(count[0] > count[1]) {
             System.out.printf("\n%s memenangkan hasil pemilihan dengan jabatan sebagai %s\n", kandidat[0][0], jabatan[0]);
-        } else {
+        } else if (count[0] < count[1]) {
             System.out.printf("\n%s memenangkan hasil pemilihan dengan jabatan sebagai %s\n", kandidat[0][1], jabatan[0]);
+        } else {
+            System.out.println("\nHasil belum didapatkan");
         }
 
         System.out.printf(Design[2]+"\nHasil Voting untuk %s\n%s = " + count[2] +"\n%s = "
                 + count[3] + "\n"+Design[2],jabatan[1],kandidat[1][0],kandidat[1][1]);
         if(count[2] > count[3]) {
             System.out.printf("\n%s memenangkan hasil pemilihan dengan jabatan sebagai %s\n", kandidat[1][0], jabatan[1]);
-        } else {
+        } else if (count[2] < count[3]) {
             System.out.printf("\n%s memenangkan hasil pemilihan dengan jabatan sebagai %s\n", kandidat[1][1], jabatan[1]);
+        }else {
+            System.out.println("\nHasil belum didapatkan");
         }
     }
 }
